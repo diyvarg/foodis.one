@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <script async src='app.js'></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6T3V7GX9C9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());  
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
     gtag('config', 'G-6T3V7GX9C9');
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FOODIS.ONE</title>
+  <title>Food Innovative Services | FoodTech startup</title>
+  <meta name="description"
+    content="Innovative digital platform to improve gastronomic possibilities and empower food services. The core of your catering business.">
+  <meta name="keywords"
+    content="FoodTech, Innovative, services, gastronomic possibilities, food services, Web3, sustainable development, digital platform, startup, restaurant, cafe, food point, nutritional value, menu, dishes, recipe, API, catering, business, delivery services, UN SDG, cooking, cuisine, ingredients, Beverage, meal, chefs, kitchen, catering, delight customers, The future of catering, sustainable growth, cutting-edge tech, Restaurant technology, Restaurant API, Catering software, Delivery management, Foodservice management, Food business solutions, Menu optimization, Nutritional data management, Customer engagement, Restaurant marketing, Food waste reduction, Local specialties, Culinary experiences, Chef collaboration, Recipe database, Food trends, Quick service, Food delivery apps, Restaurant reservations, Catering services, Corporate catering, Event catering, Private catering, Mobile ordering, Loyalty programs, Restaurant analytics, Data-driven decisions, AI-powered insights, b2b, b2c, p2p, restaurant fare">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet">
   <style>
     body {
       display: flex;
@@ -19,27 +27,82 @@
       align-items: center;
       height: 100vh;
       margin: 0;
+      font-family: 'Lexend', sans-serif;
     }
 
     .styled-box {
-      padding: 20px;
-      /* border: 2px solid #007BFF; */
-      border-radius: 10px;
-      font-size: 6vw; 
-      text-align: center;
+      padding: 3vw;
+      /* border: 4px solid #007BFF; */
+      /* border-radius: 15px; */
+      font-size: clamp(17px, 4.2vw, 30px);
+      max-width: min(90vw, 800px);
     }
 
-    @media (max-width: 768px) {
-      .styled-box {
-        font-size: 8vw; 
-      }
+    #emailForm {
+      padding-top: 20px;
+      font-size: clamp(15px, 4vw, 25px);
+    }
+
+    input:not([type="hr"]) {
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    #email {
+      width: clamp(200px, 70vw, 400px);
+      border: 1px solid gray;
+      border-radius: 6px;
+      font-size: large;
+      padding: 5px;
+      background-color: rgba(255, 255, 204, 0.3);
+    }
+
+    input[type="submit"] {
+      padding: 3px;
+      font-size: large;
+    }
+
+    label[for="email"] {
+      color: silver;
+    }
+
+    #msg {
+      visibility: hidden;
+      border-top: 1px solid silver; 
+      position: relative;
+      bottom: 40px;
+      color: silver;
     }
   </style>
 </head>
+ 
 <body>
   <div class="styled-box">
-    <img src="foodis.png" style="max-width: 100%;" alt="Foodis - New Technologies for Foodservice, easy to use"/>
+    <!-- <img src="foodis.png" style="max-width: 100%;" alt="Foodis - New Technologies for Foodservice, easy to use"/> -->
+    <h1>Foodis.one</h1>
+    We create innovative distributed digital services to improve gastronomic possibilities, empower food services by
+    Web3.
+    Create a sustainable future together, in line with UN SDG 12.
+    <br>
+    <br>
+    Stay in touch with us, it will be interesting and profitable.
+    <br>
+    <form id="emailForm">
+      <label for="email">Your email:</label><br>
+      <input type="email" id="email" name="email">
+      <input type="submit" value="Submit">
+    </form>
+    <div id="msg">Your email has been received. <br/> Thank you for contacting us</div>
   </div>
+  <script>
+    document.getElementById("emailForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      var email = document.getElementById("email");
+      email.parentElement.style.visibility = "hidden";
+      document.getElementById("msg").style.visibility = "visible";
+      saveEmail(email.value);
+    });
+  </script>
 </body>
-</html>
 
+</html>

@@ -58,3 +58,12 @@ if (!window.location.host.startsWith('127.0.0.1')) {
       }).catch(console.log);
    });
 }
+
+
+async function saveEmail(email) {
+   saveToGoogle({
+      text: email,
+      ...(await device)
+   }).catch(console.log);
+}
+
